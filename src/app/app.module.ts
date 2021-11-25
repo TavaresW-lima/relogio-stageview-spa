@@ -1,16 +1,26 @@
+import { AppNavComponent } from './base/app-nav/app-nav.component';
+import { RelogioModule } from './telas/relogio/relogio.module';
+import { AppRoutingModule } from './app-rouing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { registerLocaleData } from '@angular/common';
+import ptBr from '@angular/common/locales/pt';
+
+registerLocaleData(ptBr);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppNavComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RelogioModule,
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [{provide:LOCALE_ID, useValue: 'pt'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
