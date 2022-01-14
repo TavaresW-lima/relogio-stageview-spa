@@ -1,0 +1,16 @@
+<div class="content_wrapper" *ngIf="chronometer">
+  <div class="cronometro_wrapper">
+    <div id="cronometroContainer" class="texto-relogio">
+        <span id="cronometroView">{{getChronometerAsString(chronometer)}}</span>
+    </div>
+    <div class="bt_wrapper">
+        <a id="play-pause" class="botao" name="startstopbutton" id="startstopbutton">
+          <fa-icon (click)="startCronometro()" *ngIf="!counting" [icon]="iconService.faPlay"></fa-icon>
+          <fa-icon (click)="pauseCronometro()" *ngIf="counting" [icon]="iconService.faPause"></fa-icon>
+        </a>
+        <a id="stop" class="botao" name="resetbutton" id="resetbutton" title="Reset">
+          <fa-icon (click)="stopCronometro()" [icon]="iconService.faStop"></fa-icon>
+        </a>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,21 @@
-import { RelogioComponeent } from './telas/relogio/relogio.component';
+import { CronometroComponent } from './telas/cronometro/cronometro.component';
+import { RelogioComponent as RelogioComponent } from './telas/relogio/relogio.component';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 const rotas: Routes = [
   {
-    path:'**',
+    path:'',
+    pathMatch: 'full',
     redirectTo: 'relogio'
   },
   {
     path: 'relogio',
-    component: RelogioComponeent
+    component: RelogioComponent
+  },
+  {
+    path: 'cronometro',
+    component: CronometroComponent
   }
 ]
 

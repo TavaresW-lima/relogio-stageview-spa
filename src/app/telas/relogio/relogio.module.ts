@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { RelogioComponeent as RelogioComponent } from './relogio.component';
+import { RelogioComponent as RelogioComponent } from './relogio.component';
 import { NgModule } from "@angular/core";
 
 @NgModule({

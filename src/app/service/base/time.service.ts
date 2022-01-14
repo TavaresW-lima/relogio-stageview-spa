@@ -1,14 +1,17 @@
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { interval, Observable, Subject } from "rxjs";
 
 @Injectable({providedIn: 'root'})
-export class HoraService {
+export class TimeService {
 
+  public timeTick: Observable<number> = interval(1000);
   public hora: Subject<Date> = new Subject<Date>();
 
+  constructor() {}
+
   public atualizaRelogio(): void {
-    setInterval(() => {
+    this.timeTick.subscribe( () => {
       this.hora.next(new Date());
-    }, 1000);
+    });
   }
 }

@@ -1,0 +1,28 @@
+.menu-wrapper {
+  width:100%;
+  padding: 15px auto;
+  height: auto;
+  position: static;
+  top:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  margin: 10px 0;
+  padding: 5px 15px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  border-bottom: 5px solid white;
+  margin-bottom: 5px;
+}
+
+.menu-item:hover {
+  color: rgb(212, 233, 252);
+}
