@@ -1,0 +1,9 @@
+<ul class="list-group options-list">
+    <li *ngFor="let item of itemList;index as index"
+        class="list-group-item text-primary text-center"
+        (click)="selectItem(index)"
+        [ngClass]="{'active': isSelected(item)}"
+    >
+        {{item.displayName}}
+    </li>
+</ul>

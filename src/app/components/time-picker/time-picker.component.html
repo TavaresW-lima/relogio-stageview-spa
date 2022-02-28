@@ -1,0 +1,29 @@
+<button 
+    [ngbPopover]="popoverContent"
+    [autoClose]="'outside'"
+    type="button" 
+    class="btn btn-lg btn-outline-primary btn-block"
+>
+    <span>{{hours}}:{{minutes}}</span>
+    <fa-icon class="ml-2" [icon]="iconService.faClock"></fa-icon>
+</button>
+
+<ng-template #popoverContent>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <ui-scrollable-list
+                    [itemList]="hourList"
+                    (onChange)="setHours($event)"
+                ></ui-scrollable-list>
+            </div>
+            <div class="col-6">
+                <ui-scrollable-list
+                    [itemList]="minuteList"
+                    (onChange)="setMinutes($event)"
+                ></ui-scrollable-list>
+            </div>
+        </div>
+    </div>
+</ng-template>
+

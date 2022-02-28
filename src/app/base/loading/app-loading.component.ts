@@ -18,7 +18,6 @@ export class LoadingOverlayComponent implements OnInit {
 
   public ngOnInit(): void {
       this.loadingService.loading.subscribe( loading => {
-        console.log("LOADING ", loading);
         this.loading = loading;
       });
   }

@@ -22,4 +22,9 @@ export class Chronometer {
   public getSecond(): number {
     return Math.floor((this.onGoingTime % 60));
   }
+
+  /**@override*/
+  public toString(): string {
+    return `${String(this.getHour()).padStart(2,'0')}:${String(this.getMinute()).padStart(2,'0')}:${String(this.getSecond()).padStart(2,'0')}`;
+  }
 }

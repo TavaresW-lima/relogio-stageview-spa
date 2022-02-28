@@ -14,6 +14,11 @@ export class ChronometerService {
   constructor(
   ) {}
 
+  public setInnerChronometer(chronometer: Chronometer) {
+    this.onGoingTimeCount = chronometer.onGoingTime;
+    this.innerChronometer = chronometer;
+  }
+
   public startCounting(): void {
     this.timeInterval = setInterval(() => {
       this.onGoingTimeCount++;

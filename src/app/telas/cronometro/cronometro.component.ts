@@ -1,24 +1,28 @@
 import { LoadingService } from './../../base/loading/loading.service';
-import { TimeService } from './../../service/base/time.service';
 import { Chronometer } from './model/chronometer';
 import { ChronometerService } from './../../service/cronometro/chronometer.service';
 import { IconService } from './../../service/base/icon.service';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StringUtils } from 'src/app/base/utils/stringUtils';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ChronometerTimePickerModalComponent } from './time-picker-modal/time-picker-modal.component';
+import { Time } from '@angular/common';
 
 @Component({
   templateUrl: './cronometro.component.html',
   styleUrls: ['./cronometro.component.scss']
 })
-export class CronometroComponent implements OnInit {
+export class CronometroComponent implements OnInit, OnDestroy {
 
   public chronometer: Chronometer;
   public counting: boolean;
+  public modalRef: NgbModalRef;
 
   constructor(
     public iconService: IconService,
     public chronometerService: ChronometerService,
-    public loadingService: LoadingService
+    public loadingService: LoadingService,
+    public modalService: NgbModal
   ) {
   }
 
@@ -46,7 +50,29 @@ export class CronometroComponent implements OnInit {
     this.chronometerService.stopCounting();
   }
 
-  public getChronometerAsString(chronometer: Chronometer): string {
-    return `${StringUtils.leftZeroPad(chronometer.getHour(), 2)}:${StringUtils.leftZeroPad(chronometer.getMinute(), 2)}:${StringUtils.leftZeroPad(chronometer.getSecond(), 2)}`;
+  public editaCronometro(): void {
+    this.modalRef = this.modalService.open(ChronometerTimePickerModalComponent, {
+      centered: true,
+      animation: true,
+      backdrop: "static",
+    });
+
+    this.modalRef.result
+      .then(time => {
+        this.chronometer = this.timeToChronometer(time);
+        this.chronometerService.setInnerChronometer(this.chronometer);
+      })
+      .catch(() => {})
   }
+
+  private timeToChronometer(time: Time): Chronometer {
+    const hoursInSeconds = time.hours*3600;
+    const minutesInSeconds = time.minutes*60;
+    return new Chronometer(false,hoursInSeconds + minutesInSeconds);
+  }
+
+  ngOnDestroy() {
+    if(this.modalRef) this.modalRef.close();
+  }
+
 }

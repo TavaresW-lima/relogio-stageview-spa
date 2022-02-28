@@ -5,7 +5,8 @@ import {
   faPlay,
   faStop,
   faPause,
-  faCircleNotch
+  faCircleNotch,
+  faEdit
 } from "@fortawesome/free-solid-svg-icons";
 
 @Injectable({providedIn: 'root'})
@@ -16,4 +17,5 @@ export class IconService {
   public faStop = faStop;
   public faPause = faPause;
   public faCircleNotch = faCircleNotch;
+  public faEdit = faEdit;
 }
