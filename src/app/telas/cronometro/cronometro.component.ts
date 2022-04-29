@@ -3,7 +3,6 @@ import { Chronometer } from './model/chronometer';
 import { ChronometerService } from './../../service/cronometro/chronometer.service';
 import { IconService } from './../../service/base/icon.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { StringUtils } from 'src/app/base/utils/stringUtils';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ChronometerTimePickerModalComponent } from './time-picker-modal/time-picker-modal.component';
 import { Time } from '@angular/common';

@@ -124,6 +124,9 @@
               "devServerTarget": "relogio-stageview-spa:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }},
