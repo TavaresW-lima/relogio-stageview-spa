@@ -8,7 +8,7 @@ import { DateTimeJsonResponse } from '../../../model/date-time-json-response';
 @Injectable({providedIn: 'root'})
 export class TimeService {
 
-  readonly WORLD_TIME_API_URL = 'http://worldtimeapi.org/api';
+  readonly WORLD_TIME_API_URL = 'https://worldtimeapi.org/api';
 
   public actualTimeZone: string;
 
