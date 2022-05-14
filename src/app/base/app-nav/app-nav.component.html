@@ -1,8 +1,10 @@
 <div class="menu-wrapper">
-  <a class="menu-item"
-    *ngFor="let item of itensMenu"
-    (click)="selecionaItemMenu(item)"
-    [ngClass]="{'active': isOpcaoMenuSelecionada(item)}">
-    <fa-icon [icon]="item.icone"></fa-icon>
-  </a>
+  <div class="menu-container">
+    <a class="menu-item clickable-icon"
+      *ngFor="let item of itensMenu"
+      (click)="selecionaItemMenu(item)"
+      [ngClass]="{'active': isOpcaoMenuSelecionada(item)}">
+      <fa-icon [icon]="item.icone"></fa-icon>
+    </a>
+  </div>
 </div>

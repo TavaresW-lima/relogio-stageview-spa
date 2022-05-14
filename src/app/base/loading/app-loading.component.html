@@ -1,5 +1,5 @@
 <div [ngClass]="{'loading-container': loading}">
-  <fa-icon *ngIf="loading" class="spinner" [icon]="iconService.faCircleNotch"></fa-icon>
+  <fa-icon *ngIf="loading" class="spinner" [icon]="iconService.carregando"></fa-icon>
   <div [ngClass]="{'invisible': loading}">
     <ng-content></ng-content>
   </div>

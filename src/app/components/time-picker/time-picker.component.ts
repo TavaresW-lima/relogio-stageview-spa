@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { IconService } from '../../service/base/icon.service';
+import { IconService } from '../../service/base/icon/icon.service';
 import { Time } from '@angular/common';
 import { Listable } from '../ui-scrollable-list/listable.interface';
 

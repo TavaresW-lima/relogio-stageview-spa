@@ -5,17 +5,17 @@
     </div>
     <div class="bt_wrapper">
       <div>
-        <a id="play-pause" class="botao" name="startstopbutton">
-          <fa-icon (click)="startCronometro()" *ngIf="!counting" [icon]="iconService.faPlay"></fa-icon>
-          <fa-icon (click)="pauseCronometro()" *ngIf="counting" [icon]="iconService.faPause"></fa-icon>
+        <a id="play-pause" class="botao clickable-icon" name="startstopbutton">
+          <fa-icon (click)="startCronometro()" *ngIf="!counting" [icon]="iconService.play"></fa-icon>
+          <fa-icon (click)="pauseCronometro()" *ngIf="counting" [icon]="iconService.pause"></fa-icon>
         </a>
-        <a id="stop" class="botao" name="resetbutton" title="Reset">
-          <fa-icon (click)="stopCronometro()" [icon]="iconService.faStop"></fa-icon>
+        <a id="stop" class="botao clickable-icon" name="resetbutton" title="Reset">
+          <fa-icon (click)="stopCronometro()" [icon]="iconService.stop"></fa-icon>
         </a>
       </div>
       <div>
-        <a id="edit" class="botao" nome="edit">
-          <fa-icon (click)="editaCronometro()" [icon]="iconService.faEdit"></fa-icon>
+        <a id="edit" class="botao clickable-icon" nome="edit">
+          <fa-icon (click)="editaCronometro()" [icon]="iconService.editar"></fa-icon>
         </a>
       </div>
     </div>

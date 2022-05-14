@@ -1,7 +1,7 @@
 import { LoadingService } from './../../base/loading/loading.service';
 import { Chronometer } from './model/chronometer';
 import { ChronometerService } from './../../service/cronometro/chronometer.service';
-import { IconService } from './../../service/base/icon.service';
+import { IconService } from '../../service/base/icon/icon.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ChronometerTimePickerModalComponent } from './time-picker-modal/time-picker-modal.component';
@@ -19,7 +19,6 @@ export class CronometroComponent implements OnInit, OnDestroy {
   constructor(
     public iconService: IconService,
     public chronometerService: ChronometerService,
-    public loadingService: LoadingService,
     public modalService: NgbModal
   ) {}
 

@@ -25,7 +25,7 @@ body {
     top:0;
     left: 0;
     height: 100vh;
-    background-color: #2b53c0;
+    background-color: #f0f0f0;
 }
 
 .texto-relogio {
@@ -35,7 +35,19 @@ body {
     height:auto;
     text-align: center;
     box-sizing:border-box;
-    color:#ffffff;
+    color:#414141;
 }
 
+.clickable-icon {
+    color: #41414199;
+    
+    &:hover {
+        color: #414141CC;
+    }
 
+    &:active {
+        color: #414141FF;
+    }
+
+    transition: color .5s ease;
+}

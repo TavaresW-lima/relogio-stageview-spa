@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { ItemMenu } from "src/app/model/itemMenu";
-import { AppNavService } from "src/app/service/base/app-nav.service";
+import { AppNavService } from "src/app/service/base/nav/app-nav.service";
+import { IconService } from '../../service/base/icon/icon.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,10 +11,11 @@ import { AppNavService } from "src/app/service/base/app-nav.service";
 export class AppNavComponent {
 
   @Input() public itensMenu: ItemMenu[];
-
+  @Input() public aberto: boolean = false;
 
   constructor(
-    private navService: AppNavService
+    private navService: AppNavService,
+    public iconService: IconService
   ) {}
 
   public selecionaItemMenu(item: ItemMenu) {

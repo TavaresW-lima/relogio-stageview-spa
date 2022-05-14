@@ -1,28 +1,33 @@
 .menu-wrapper {
   width:100%;
-  padding: 15px auto;
+  padding: 15px;
   height: auto;
   position: static;
   top:0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  font-size: 1.2rem;
+}
+
+.menu-container {
+  font-size: 1.8rem;
 }
 
 .menu-item {
   margin: 10px 0;
-  padding: 5px 15px;
-  font-size: 2rem;
-  color: white;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
 .menu-item.active {
-  border-bottom: 5px solid white;
-  margin-bottom: 5px;
+  color:#414141FF;
+
+  &:hover {
+    color:#414141FF;
+  }
 }
 
-.menu-item:hover {
-  color: rgb(212, 233, 252);
-}
+
+

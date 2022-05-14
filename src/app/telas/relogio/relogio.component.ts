@@ -1,33 +1,22 @@
-import { LoadingService } from './../../base/loading/loading.service';
-import { TimeService } from '../../service/base/time.service';
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { TimeService } from '../../service/base/time/time.service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './relogio.component.html',
   styleUrls: ['./relogio.component.scss']
 })
-export class RelogioComponent implements OnInit, DoCheck {
+export class RelogioComponent implements OnInit {
 
-  public hora: Date;
+  public hora$: Observable<Date>;
 
   constructor(
-    private horaService: TimeService,
-    private loadingService: LoadingService
+    private horaService: TimeService
   ) {
   }
 
-  public ngDoCheck(): void {
-      if (!this.hora) {
-        this.loadingService.startLoading();
-      } else {
-        this.loadingService.stopLoading();
-      }
-  }
-
   public ngOnInit(): void {
-    this.horaService.hora.subscribe(hora => {
-      this.hora = hora;
-    });
+    this.hora$ = this.horaService.hora.asObservable();
   }
 
 }

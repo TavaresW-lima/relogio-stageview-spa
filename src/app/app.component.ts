@@ -1,5 +1,5 @@
-import { AppNavService } from 'src/app/service/base/app-nav.service';
-import { TimeService } from './service/base/time.service';
+import { AppNavService } from 'src/app/service/base/nav/app-nav.service';
+import { TimeService } from './service/base/time/time.service';
 import { Component, OnInit } from '@angular/core';
 import { ItemMenu } from './model/itemMenu';
 import { faClock, faStopwatch } from '@fortawesome/free-solid-svg-icons';
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit{
   }
 
   public ngOnInit() {
-    this.horaService.atualizaRelogio();
+    this.horaService.initializeClock();
     this.navService.selecionaItemMenu(this.itensMenu[0]);
   }
 

@@ -1,8 +1,9 @@
 <div class="wrapper">
-  <ng-container *ngIf="hora">
-    <div class="texto-relogio">{{ hora | date: 'HH:mm:ss' }}</div>
-    <div class="texto-data">
-      <span>{{hora | date: 'EEEE' | titlecase}}, {{ hora | date: 'dd' }} de {{hora | date: 'MMMM' | titlecase}}</span>
+    <div id="relogio" class="texto-relogio">{{ hora$ | async | date: 'HH:mm:ss' }}</div>
+    <div id="data" class="texto-data">
+      <span>
+        {{hora$ | async | date: 'EEEE' | titlecase}}, 
+        {{ hora$ | async | date: 'dd' }} de {{hora$ | async | date: 'MMMM' | titlecase}}
+      </span>
     </div>
-  </ng-container>
 </div>

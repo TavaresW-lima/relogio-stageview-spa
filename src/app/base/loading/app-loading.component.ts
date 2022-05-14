@@ -1,4 +1,4 @@
-import { IconService } from './../../service/base/icon.service';
+import { IconService } from '../../service/base/icon/icon.service';
 import { LoadingService } from './loading.service';
 import { Component, OnInit } from '@angular/core';
 

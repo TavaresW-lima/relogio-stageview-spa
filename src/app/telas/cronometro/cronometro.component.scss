@@ -18,7 +18,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 10px 0 0;
-  font-size: 4em;
+  font-size: 3em;
 }
 
 .align-end {
@@ -27,16 +27,7 @@
 
 .botao {
   cursor: pointer;
-  color: white;
   margin: 0 10px;
-}
-
-.botao :hover {
-  color: rgb(179, 179, 179) !important;
-}
-
-.botao :active {
-  color:rgb(148, 148, 148) !important;
 }
 
 .edit-input {

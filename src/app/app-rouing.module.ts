@@ -11,7 +11,8 @@ const rotas: Routes = [
   },
   {
     path: 'relogio',
-    component: RelogioComponent
+    component: RelogioComponent,
+  
   },
   {
     path: 'cronometro',

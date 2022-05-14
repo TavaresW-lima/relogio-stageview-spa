@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { LoadingOverlayComponent } from './base/loading/app-loading.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(ptBr);
 
@@ -25,6 +26,7 @@ registerLocaleData(ptBr);
     CronometroModule,
     SharedModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [{provide:LOCALE_ID, useValue: 'pt'}],
   bootstrap: [AppComponent]
