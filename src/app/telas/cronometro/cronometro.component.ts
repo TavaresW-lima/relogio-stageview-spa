@@ -1,11 +1,9 @@
-import { LoadingService } from './../../base/loading/loading.service';
 import { Chronometer } from './model/chronometer';
 import { ChronometerService } from './../../service/cronometro/chronometer.service';
 import { IconService } from '../../service/base/icon/icon.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ChronometerTimePickerModalComponent } from './time-picker-modal/time-picker-modal.component';
-import { Time } from '@angular/common';
 
 @Component({
   templateUrl: './cronometro.component.html',
@@ -57,17 +55,16 @@ export class CronometroComponent implements OnInit, OnDestroy {
     );
 
     this.modalRef.result
-      .then((time) => {
-        this.chronometer = this.timeToChronometer(time);
+      .then((minutes) => {
+        this.chronometer = this.minutesToChronometer(minutes);
         this.chronometerService.setInnerChronometer(this.chronometer);
       })
       .catch(() => {});
   }
 
-  private timeToChronometer(time: Time): Chronometer {
-    const hoursInSeconds = time.hours * 3600;
-    const minutesInSeconds = time.minutes * 60;
-    return new Chronometer(false, hoursInSeconds + minutesInSeconds);
+  private minutesToChronometer(minutes: number): Chronometer {
+    const minutesInSeconds = minutes * 60;
+    return new Chronometer(false, minutesInSeconds);
   }
 
   ngOnDestroy() {
